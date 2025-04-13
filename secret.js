@@ -1,5 +1,3 @@
-// secret.js
-
 const canvas = document.getElementById("starCanvas");
 const ctx = canvas.getContext("2d");
 
