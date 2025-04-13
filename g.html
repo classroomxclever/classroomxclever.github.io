@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Clever | Portal</title>
+  <link rel="stylesheet" href="secret.css" />
+  <style>
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 10;
+      background: #00ff88;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .title {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 10;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    iframe {
+      position: absolute;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      height: calc(100% - 80px);
+      border: none;
+      z-index: 5;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="starCanvas"></canvas>
+
+  <a href="games.html" class="back-button">← Back to Games</a>
+  <div class="title" id="page-name">Loading...</div>
+  <iframe id="embed-iframe" src=""></iframe>
+
+  <script src="secret.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const tool = params.get('tool');
+    const iframe = document.getElementById('embed-iframe');
+    const pageName = document.getElementById('page-name');
+
+    const tools = {
+      bowl: { src: 'assets/bowl.html', title: 'Retro Bowl' },
+      // Add more tools here like:
+      // mario: { src: 'assets/mario.html', title: 'Super Mario' }
+    };
+
+    if (tools[tool]) {
+      iframe.src = tools[tool].src;
+      pageName.textContent = tools[tool].title;
+    } else {
+      iframe.src = '';
+      pageName.textContent = 'Unknown Game';
+    }
+  </script>
+</body>
+</html>
