@@ -4,6 +4,24 @@
   <meta charset="UTF-8" />
   <title>Clever | Portal</title>
   <link rel="stylesheet" href="secret.css" />
+  <style>
+    .image-button {
+      display: block;
+      width: 150px;
+      height: 150px;
+      background-image: url('./images/retro-bowl.jpg'); /* Replace with your image */
+      background-size: cover;
+      background-position: center;
+      border: none;
+      margin: 50px auto;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .image-button:hover {
+      transform: scale(1.1);
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -18,7 +36,12 @@
   <canvas id="starCanvas"></canvas>
 
   <div class="page-content">
-    <
+    <h1 style="color: white;">Welcome to the Games!</h1>
+
+    <!-- Image button to g.html -->
+    <a href="g.html?tool=bowl">
+      <button class="image-button"></button>
+    </a>
   </div>
 
   <script src="secret.js"></script>
